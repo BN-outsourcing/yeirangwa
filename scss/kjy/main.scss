@@ -1,0 +1,201 @@
+.wrapper {
+    max-width: 1820px;
+    margin: 0 auto;
+    &[max="1440"]{
+        max-width: 1440px;
+    }
+}
+
+._header {
+
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 30px 0;
+    }
+
+    .depth {
+        display: flex;
+        gap: 60/18*1em;
+        font-size: 18px;
+    }
+
+    .menu {
+        position: relative;
+        width: 30px;
+        height: 21px;
+        div {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: #000;
+            top: 0;
+            left: 0;
+            &:nth-of-type(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            &:nth-of-type(3) {
+                top: 100%;
+            }
+        }
+    }
+
+}
+
+._footer {
+    background: #000;
+    color: #fff;
+    padding: 60px 0;
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .lt {
+        nav {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+            a {
+                padding: 13/16*1em 20/16*1em;
+                font-size: 16px;
+                letter-spacing: -0.04em;
+                border: 1px solid #fff;
+            }
+        }
+    
+        .address {
+            margin-top: 60px;
+        }
+    
+        .copy {
+            font-size: 14px;
+            letter-spacing: -0.04em;
+            margin-top: 60px;
+        }
+    }
+
+    .rt {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .sns {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 15px;
+            a {
+                border: 1px solid #fff;
+                border-radius: 1000%;
+                position: relative;
+                width: 50px;
+                &::after {
+                    content: '';
+                    display: block;
+                    padding-bottom: 100%;
+                }
+                img {
+                    position: absolute; 
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+
+        .tel {
+            text-align: right;
+            dt {
+                font-weight: 600;
+                font-size: 26px;
+                letter-spacing: -0.04em;
+            }
+            dd {
+                font-weight: bold;
+                font-size: 50px;
+                letter-spacing: -0.04em;
+                margin-top: 20px;
+                color: #687adf;
+            }
+        }
+
+    }
+
+}
+
+._main {
+    .sec01 {
+        margin-top: 160px;
+        position: relative;
+        h3 {
+            font-size: 180px;
+            letter-spacing: -0.02em;
+            position: absolute;
+            letter-spacing: 50%;
+            white-space: nowrap;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        .img {
+            position: relative;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url(/asset/img/main/sec01.jpg);
+            &::after {
+                content: '';
+                display: block;
+                padding-bottom: 880/1920*100%;
+            }
+
+            .tbx {
+
+                position: absolute;
+                right: 160px;
+                bottom: 95px;
+                color: #fff;
+
+                .page {
+                    display: flex;
+                    margin-bottom: 50/20.53*1em;
+                    gap: 30/20.53*1em;
+                    font-size: 20.53px;
+                    letter-spacing: -0.04em;
+                    font-family: "Playfair Display", serif;
+                    font-weight: 400;
+                    button {
+                        all: unset;
+                        cursor: pointer;
+                    }
+                }
+                
+                dl {
+                    dt {
+                        font-weight: bold;
+                        font-size: 70px;
+                        letter-spacing: -0.025em;
+                        line-height: (90/70);
+                    }
+                    dd {
+                        margin-top: 39/24*1em;
+                        font-weight: 500;
+                        font-size: 26px;
+                        letter-spacing: -0.04em;
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+    .sec02 {
+        position: relative;
+
+    }
+
+}
