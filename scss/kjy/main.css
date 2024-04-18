@@ -169,4 +169,102 @@
 }
 ._main .sec02 {
   position: relative;
+}
+._main .connecting .wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+._main .connecting .lt {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+._main .connecting .lt dl dt {
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+}
+._main .connecting .lt dl dd {
+  margin-top: 1.6666666667em;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+._main .connecting .lt dl dd p {
+  font-size: 30px;
+}
+._main .connecting .lt dl dd span {
+  font-size: 18px;
+  color: #444444;
+  margin-top: 15px;
+  display: block;
+}
+._main .connecting .rt h4 {
+  font-size: 70px;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+}
+._main .connecting .rt .box {
+  margin-top: 40px;
+}
+._main .connecting .rt .box label {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: #444444;
+}
+._main .connecting .rt .box label span {
+  color: #687adf;
+}
+._main .connecting .rt .box select {
+  margin-top: 15px;
+  color: #aaaaaa;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  padding: 0 20px;
+}
+._main .connecting .rt .box input {
+  width: 100%;
+  min-width: 0;
+  height: 50px;
+  border-radius: 25px;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  padding: 0 20px;
+  margin-top: 15px;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+._main .connecting .rt .box textarea {
+  height: 150px;
+  border-radius: 25px;
+  border: 1px solid #dddddd;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-top: 15px;
+  width: 100%;
+  min-width: 0;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+._main .connecting .rt .box textarea::-moz-placeholder {
+  color: #aaaaaa;
+}
+._main .connecting .rt .box textarea::placeholder {
+  color: #aaaaaa;
+}
+._main .connecting .rt .flex {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 21px;
+}
+._main .connecting .rt .flex .box {
+  margin-top: 0;
 }/*# sourceMappingURL=main.css.map */

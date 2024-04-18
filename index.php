@@ -32,6 +32,72 @@
 
     <section class="sec06"></section>
 
+
+
+    <section class="connecting">
+        <div class="wrapper">
+            <div class="lt">
+                <dl>
+                    <dt>오시는 길</dt>
+                    <dd>
+                        <p>경남 창원시 마산회원구 3·15대로 659</p>
+                        <span>(석전동 244-4)</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>진료시간</dt>
+                    <dd>
+                        <div>
+                            <h4>평일</h4>
+                            <p>09:00 ~ 18:00</p>
+                        </div>
+                        <div>
+                            <h4>토요일</h4>
+                            <p>09:00 ~ 12:00</p>
+                            <span> * 상황에 따라 접수 조기마감 될 수 있습니다.</span>
+                        </div>
+                        <div>
+                            <h4>점심시간</h4>
+                            <p>13:00 ~ 14:00</p>
+                        </div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="rt">
+                <form action="">
+                    <h4>문의하기</h4>
+                    <div class="box">
+                        <label for="">문의항목<span>*</span></label>
+                        <select name="" id="">
+                            <option value="">선택해 주세요.</option>
+                        </select>
+                    </div>
+                    <div class="flex">
+                        <div class="box">
+                            <label for="">이름<span>*</span></label>
+                            <input type="text">
+                        </div>
+                        <div class="box">
+                            <label for="">연락처<span>*</span></label>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="box">
+                        <label for="">내용<span>*</span></label>
+                        <textarea name="" id="" cols="30" rows="10" placeholder="자유롭게 작성해 주세요."></textarea>
+                    </div>
+                    <div>
+                        <div>
+                            <input type="checkbox" name="" id="">
+                            <p><span>개인정보처리방침</span>에 동의합니다. <a href="">(전문보기)</a></p>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <?php
         include_once $_SERVER["DOCUMENT_ROOT"]."/components/footer.html";
     ?>

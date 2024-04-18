@@ -198,4 +198,111 @@
 
     }
 
+
+    .connecting {
+
+        .wrapper {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        .lt {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            dl {
+                dt {
+                    font-size: 70px;
+                    font-weight: bold;
+                    letter-spacing: -0.04em;
+                }
+                dd {
+                    margin-top: 50/30*1em;
+                    font-weight: 600;
+                    letter-spacing: -0.04em;
+                    p {
+                        font-size: 30px;
+                    }
+                    span {
+                        font-size: 18px;
+                        color: #444444;
+                        margin-top: 15px;
+                        display: block; 
+                    }
+                }
+            }
+        }
+
+        .rt {
+            h4 {
+                font-size: 70px;
+                font-weight: bold;
+                letter-spacing: -0.04em;
+            }
+            .box {
+                margin-top: 40px;
+                label {
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: -0.04em;
+                    color: #444444;
+                    span {
+                        color: #687adf;
+                    }
+                }
+                select {
+                    margin-top: 15px;
+                    color: #aaaaaa;
+                    font-size: 18px;
+                    letter-spacing: -0.04em;
+                    display: block;
+                    width: 100%;
+                    min-width: 0;
+                    height: 50px;
+                    border-radius: 25px;
+                    border: 1px solid #dddddd;
+                    box-sizing: border-box;
+                    padding: 0 20px;
+                }
+                input {
+                    width: 100%;
+                    min-width: 0;
+                    height: 50px;
+                    border-radius: 25px;
+                    border: 1px solid #dddddd;
+                    box-sizing: border-box;
+                    padding: 0 20px;
+                    margin-top: 15px;
+                    font-size: 18px;
+                    letter-spacing: -0.04em;
+                }
+                textarea {
+                    height: 150px;
+                    border-radius: 25px;
+                    border: 1px solid #dddddd;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    margin-top: 15px;
+                    width: 100%;
+                    min-width: 0;
+                    font-size: 18px;
+                    letter-spacing: -0.04em;
+                    &::placeholder {
+                        color: #aaaaaa;
+                    }
+                }
+            }
+            .flex {
+                margin-top: 30px;
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                gap: 21px;
+                .box {
+                    margin-top: 0;
+                }
+            }
+        }
+
+    }
+
 }
