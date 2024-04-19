@@ -26,6 +26,10 @@
         <!-- SCRIPT -->
         <link rel="stylesheet" href="/plugin/swiper11.0.4/swiper.css">
         <script src="/plugin/swiper11.0.4/swiper.js"></script>
+        <script src="/plugin/gsap3.12.2/gsap.min.js"></script>
+        <script src="/plugin/gsap3.12.2/ScrollTrigger.min.js"></script>
+        <script src="/plugin/gsap3.12.2/ScrollSmoother.min.js"></script>
+        <script src="/plugin/jquery.js"></script>
 
     </head>
 <body>
