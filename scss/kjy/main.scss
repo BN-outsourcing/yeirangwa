@@ -544,21 +544,68 @@
                 display: grid;
                 grid-template-columns: repeat(2,1fr);
                 gap: 100px;
-                dl {
-                    text-align: center;
-                    dt {
-                        font-size: 20px;
+                max-width: 1700px;
+                margin: 0 auto;
+                color: #fff;
+
+                .box {
+                    position: relative;
+                    background: #000;
+                    border-radius: 50px;
+                    &::after {
+                        content: '';
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+
+                    dl {
+                        text-align: center;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%,-50%);
+                        dt {
+                            font-size: 20px;
+                            letter-spacing: -0.02em;
+                            font-weight: bold;
+                            font-family: 'Playfair Display';
+                        }
+                        dd {
+                            font-size: 70px;
+                            font-weight: bold;
+                            letter-spacing: -0.04em;
+                            margin-top: 30px;
+                        }
+                    }
+
+                    div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 180/18*1em;
+                        height: 50/18*1em;
+                        font-size: 18px;
+                        font-weight: 500;
                         letter-spacing: -0.02em;
-                        font-weight: bold;
-                        font-family: 'Playfair Display';
+                        font-family: 'Manrope';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 50px;
+                        transform: translate(-50%,0);
+                        background: #fff;
+                        color: #000;
+                        border-radius: 1000px;
                     }
-                    dd {
-                        font-size: 70px;
-                        font-weight: bold;
-                        letter-spacing: -0.04em;
-                        margin-top: 30px;
-                    }
+
                 }
+            }
+
+            > p {
+                font-size: 20px;
+                letter-spacing: -0.04em;
+                color: #fff;
+                text-align: center;
+                margin-top: 45px;
             }
 
         }
@@ -1052,26 +1099,136 @@
 
     .sec06 {
         background: #fff;
-        .swiper {
-            width: 670px;
-            .swiper-slide {
-                position: relative;
+        padding: 150px 0;
+
+        .warpbox {
+            position: relative;
+
+            .paging {
+                position: absolute;
+                left: 0;
+                bottom: 140px;
+                display: flex;
+                border-bottom: 1px solid #e5e5e5;
+                padding-bottom: 16px;
+                width: 700px;
+                padding-left: 160px;
+                li {
+                    padding: 0 70px 0 10px;
+                    font-weight: bold;
+                    letter-spacing: -0.04em;
+                    font-size: 18px;
+                    cursor: pointer;
+                }
+            }
+
+            .tbx {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+
+                dl {
+                    padding-right: 160px;
+                    position: relative;
+                    z-index: 2;
+                    dt {
+                        font-size: 26px;
+                        letter-spacing: -0.04em;
+                        text-align: right;
+                        span {
+                            font-weight: bold;
+                        }
+                    }
+                    dd {
+                        font-family: 'Manrope';
+                        font-size: 80px;
+                        font-weight: 600;
+                        letter-spacing: -0.02em;
+                        margin-top: 20/80*1em;
+                    }
+                }
+
+                p {
+                    padding-left: 140px;
+                    font-weight: 300;
+                    font-size: 20px;
+                    letter-spacing: -0.04em;
+                    color: #444444;
+                    line-height: (36/20);
+                    margin-top: 30px;
+                    padding-top: 35px;
+                    border-top: 1px solid #e5e5e5;
+                }
+
+            }
+
+        }
+
+        .sbox {
+            position: relative;
+
+            .line-circle {
+                width: 780px;
+                border: 1px solid rgba($color: #000, $alpha: 0.3);
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0%,-50%);
+                border-radius: 1000px;
                 &::after {
                     content: '';
-                    width: 670px;
                     display: block;
                     padding-bottom: 100%;
                 }
+            }
 
-                img {
-                    position: absolute;
-                    left: 0;
-                    top: 0;
+            .bt {
+                font-size: 140px;
+                letter-spacing: -0.02em;
+                top: 220px;
+                left: 80px;
+                position: absolute;
+                font-family: 'Playfair Display';
+                z-index: 2;
+                font-weight: bold;
+                color: transparent;
+                -webkit-text-stroke: 1px #aaaaaa;
+            }
+
+            .num {
+                font-size: 200px;
+                font-weight: bold;
+                letter-spacing: -0.02em;
+                opacity: 0.1;
+                font-family: 'Playfair Display';
+                position: absolute;
+                right: 255px;
+                top: 0;
+            }
+
+            .swiper {
+                width: 670px;
+                border-radius: 1000px;
+                .swiper-slide {
+                    position: relative;
                     width: 100%;
-                    height: 100%;
-                    object-fit: cover;
+                    &::after {
+                        content: '';
+                        display: block;
+                        padding-bottom: 100%;
+                    }
+    
+                    img {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
                 }
             }
+
         }
     }
 
