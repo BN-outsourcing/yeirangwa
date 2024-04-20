@@ -26,3 +26,26 @@
         </li>
     </ul>
 </section>
+
+<script>
+
+    const m2 = gsap.matchMedia();
+
+    m2.add("(min-width:821px)",()=>{
+
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .sec04",
+                pin : true,
+                scrub : 1,
+            }
+        })
+        .fromTo('._main .sec04 ul',{
+            yPercent : 100
+        },{
+            yPercent : -30
+        });
+
+    });
+
+</script>

@@ -49,6 +49,7 @@
             </div>
 
             <?php
+            
                 # 섹션 9
                 include $_SERVER["DOCUMENT_ROOT"]."/components/main/section09.html";
 
