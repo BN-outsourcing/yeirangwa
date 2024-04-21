@@ -53,21 +53,23 @@
     </div>
 
     <div class="more-box">
-        <div class="more">
-            <div class="box">
+        <div class="more-flex">
+            <a href="/smilelasik.php" class="box">
+                <div class="img"></div>
                 <dl>
                     <dt>SMILE LASIK</dt>
                     <dd>스마일라식</dd>
                 </dl>
-                <div>View More</div>
-            </div>
-            <div class="box">
+                <div class="more">View More</div>
+            </a>
+            <a href="/presbyopia.php" class="box">
+                <div class="img"></div>
                 <dl>
                     <dt>Presbyopia & Cataract</dt>
                     <dd>노안·백내장</dd>
                 </dl>
-                <div>View More</div>
-            </div>
+                <div class="more">View More</div>
+            </a>
         </div>
         <p>원하는 분야를 선택하세요. 해당 시술 내용을 확인할 수 있습니다.</p>
     </div>
@@ -82,21 +84,30 @@
         scrollTrigger : {
             trigger : "._main .sec02",
             endTrigger : "._main .sec02 .two",
-            markers : true,
+            // markers : true,
             start : "top top",
             end : "bottom center",
             scrub : 1,
         }
     });
     ScrollTrigger.create({
-
         trigger : "._main .sec02 .wallpaper",
         endTrigger : "._main .sec02",
-        // markers : true,
+        end : "bottom bottom",
+        markers : true,
         pin : true,
         pinSpacing : false,
         scrub : 1,
+    });
 
-    })
+    ScrollTrigger.create({
+        trigger : "._main .sec02 .two .bt",
+        endTrigger : "._main .sec02 .two .area",
+        start : "top center",
+        end : "bottom bottom",
+        markers : true,
+        pin : true,
+        pinSpacing : false,
+    });
 
 </script>
