@@ -11,7 +11,9 @@
         </p>
     </div>
     
-    <div class="wallpaper"></div>
+    <div class="wallpaper">
+        <div class="back"></div>
+    </div>
 
     <div class="two">
         
@@ -79,8 +81,7 @@
 
 <script>
 
-    gsap.to('._main .sec02 .wallpaper',{
-        clipPath: "circle(100% at 50% 50%)",
+    gsap.timeline({
         scrollTrigger : {
             trigger : "._main .sec02",
             endTrigger : "._main .sec02 .two",
@@ -89,12 +90,19 @@
             end : "bottom center",
             scrub : 1,
         }
-    });
+    })
+    .to('._main .sec02 .wallpaper',{
+        clipPath: "circle(100% at 50% 50%)",
+    },'a')
+    .to('._main .sec02 .wallpaper .back',{
+        opacity : 1
+    },'a')
+
     ScrollTrigger.create({
         trigger : "._main .sec02 .wallpaper",
         endTrigger : "._main .sec02",
         end : "bottom bottom",
-        markers : true,
+        // markers : true,
         pin : true,
         pinSpacing : false,
         scrub : 1,
@@ -105,9 +113,84 @@
         endTrigger : "._main .sec02 .two .area",
         start : "top center",
         end : "bottom bottom",
-        markers : true,
+        // markers : true,
         pin : true,
         pinSpacing : false,
+    });
+
+
+    $('._main .sec02 .more-box .more-flex .box').click(function(e){
+
+        if(window.innerWidth >= 821){
+
+            e.preventDefault();
+
+            const href = $(this).attr('href');
+
+            let imgSrc;
+
+            switch($(this).index()){
+                case 0 :
+                    imgSrc = "/asset/img/main/sec02_01.png";
+                    break;
+                case 1 :
+                    imgSrc = "/asset/img/main/sec02_02.png";
+                    break;
+            }
+
+            const clone = $(this).clone();
+
+            clone.addClass('fix-img');
+
+            const option = {
+                y : $(this)[0].getBoundingClientRect().top,
+                x : $(this)[0].getBoundingClientRect().left,
+                width : $(this).width(),
+                height : $(this).height(),
+            };
+
+            $(clone).css({
+                position: "fixed",
+                left : option.x,
+                top : option.y,
+                width : option.width,
+                height : option.height
+            })
+
+            $(clone).find("dl").remove();
+            $(clone).find(".more").remove();
+
+            $(clone).find(".img").css({
+                opacity : 1,
+                transition : 'none',
+                backgroundImage : `url(${imgSrc})`,
+            });
+
+            $(clone).click((e)=>{e.preventDefault(); return false;});
+
+            $(document.body).append(clone);
+
+            gsap.timeline({
+                onComplete : ()=>{
+                    window.location.href = href;
+                }
+            })
+            .to($(clone),{
+                width : window.innerWidth,
+                height : window.innerHeight,
+                duration : 0.6,
+            },"a")
+            .to($(clone),{
+                left : 0,
+                top : 0,
+                rigiht : 0,
+                bottom : 0,
+            },'a')
+
+            return false;
+
+        }
+
     });
 
 </script>

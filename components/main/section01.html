@@ -73,6 +73,22 @@
 
 <script>
 
+    gsap.registerPlugin(SplitText);
+
+    const split = new SplitText($('._main .sec01 .rel > h3'));
+    const split2 = new SplitText($('._main .sec01 .img h3'));
+
+    gsap.from(split.chars,{
+        y : 100,
+        opacity : 0,
+        stagger: 0.05
+    });
+    gsap.from(split2.chars,{
+        y : 100,
+        opacity : 0,
+        stagger: 0.05
+    });
+
     $('.sec01 .swiper .page').empty();
 
     const slide = new Swiper('.sec01 .swiper',{
@@ -100,6 +116,5 @@
     for(let i = 0; i < slide.slides.length; i++){
         $('.sec01 .swiper .page').append(`<button onClick="slideHanlder(${i})"}>${(i+1).toString().padStart(2,'0')}</button>`);
     }
-
 
 </script>

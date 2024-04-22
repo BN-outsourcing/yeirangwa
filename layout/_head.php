@@ -29,6 +29,7 @@
         <script src="/plugin/gsap3.12.2/gsap.min.js"></script>
         <script src="/plugin/gsap3.12.2/ScrollTrigger.min.js"></script>
         <script src="/plugin/gsap3.12.2/ScrollSmoother.min.js"></script>
+        <script src="/plugin/gsap3.12.2/SplitText.min.js"></script>
         <script src="/plugin/jquery.js"></script>
 
     </head>

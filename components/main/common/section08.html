@@ -95,4 +95,33 @@
     });
     b.controller.control  = s;
     s.controller.control  = b;
+
+    gsap.timeline({
+        scrollTrigger : {
+            trigger : "._main .sec08 .top",
+            start : "top bottom-=10%"
+        }
+    })
+    .from('._main .sec08 .top dl dt',{
+        y : 50,
+        opacity : 0
+    })
+    .from('._main .sec08 .top dl dd',{
+        y : 50,
+        opacity : 0
+    })
+    .from('._main .sec08 .top a',{
+        x : 50,
+        opacity : 0
+    })
+
+    gsap.from('._main .sec08 .box',{
+        y : 50,
+        opacity : 0,
+        scrollTrigger : {
+            trigger : "._main .sec08 .box",
+            start : "top bottom-=10%"
+        }
+    });
+
 </script>
