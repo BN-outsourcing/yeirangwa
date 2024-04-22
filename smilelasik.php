@@ -3,6 +3,10 @@
     include_once $_SERVER["DOCUMENT_ROOT"]."/components/header.html";
 ?>
 
+<?php
+    include $_SERVER["DOCUMENT_ROOT"]."/components/main/common/menu-hover.html";
+?>
+
 <div id="smooth-wrapper">
     <div id="smooth-content">
         <main class="_main">

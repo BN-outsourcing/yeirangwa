@@ -81,6 +81,28 @@
 
 <script>
 
+    gsap.registerPlugin(SplitText);
+
+    const h3Split = new SplitText('._main .sec02 .h3 p');
+    gsap.from(h3Split.chars, {
+        y: 100,
+        autoAlpha: 0, 
+        stagger: 0.05,
+        scrollTrigger : {
+            trigger : "._main .sec02 .h3",
+            start : "top bottom-=10%"
+        }
+    });
+    
+    gsap.from('._main .sec02 .tbx', {
+        x: 100,
+        opacity : 0,
+        scrollTrigger : {
+            trigger : "._main .sec02 .tbx",
+            start : "top bottom-=10%"
+        }
+    });
+
     gsap.timeline({
         scrollTrigger : {
             trigger : "._main .sec02",
