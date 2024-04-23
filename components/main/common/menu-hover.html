@@ -3,7 +3,8 @@
 </div>
 
 <script>
-    $('.menu-hover').click(function(){
+    $('.menu-hover').click(function(e){
+        e.stopPropagation();
         $('.headerNav').addClass('active');
     });
 </script>

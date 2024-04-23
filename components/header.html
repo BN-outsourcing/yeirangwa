@@ -21,6 +21,28 @@
     </div>
 </header>
 
+<script>
+
+    let saveScroll = 0;
+
+    $(window).scroll(function(){
+
+        if(window.innerWidth >= 1025){
+
+            if(saveScroll >= $(window).scrollTop()){
+                $('._header .depth').show();
+            }else{
+                $('._header .depth').hide();
+            }
+
+            saveScroll = $(window).scrollTop();
+
+        }
+
+    }).scroll();
+
+</script>
+
 <div class="headerNav">
     <div class="logo">
         <a href="/"><img src="/asset/img/logo.png" alt="로고"></a>
@@ -61,3 +83,16 @@
         </div>
     </div>
 </div>
+
+
+<script>
+
+    $(window).click(function(e){
+
+        if($(e.target).closest('.headerNav.active').length === 0 || !$(e.target).closest('.headerNav').hasClass('active')){
+            $('.headerNav').removeClass('active');
+        }
+
+    });
+
+</script>

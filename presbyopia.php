@@ -100,53 +100,7 @@
     </div>
 </div>
 
-<script>
-    gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
-
-    ScrollSmoother.create({
-        smooth: 1,
-        effects: true,
-    });
-
-    gsap.timeline({})
-    .from('._main .visual .tbx dl dt',{
-        y : 50,
-        opacity : 0
-    })
-    .from('._main .visual .tbx dl dd',{
-        y : 50,
-        opacity : 0
-    },">-=25%")
-    .from('._main .visual .tbx p',{
-        y : 50,
-        opacity : 0
-    },">-=25%");
-
-    
-    const mm4 = gsap.matchMedia();
-
-    mm4.add("(min-width:821px)",()=>{
-
-        const scrollTween = gsap.to('._main .visual-box .presbyopia_section01',{
-            x : ()=> -(2610 - window.innerWidth),
-            ease : "none",
-            scrollTrigger : {
-                trigger : "._main .visual-box",
-                markers : true,
-                pin : true,
-                scrub : 1,
-                end : "+=400%",
-                invalidateOnRefresh : true
-            }
-        });
-
-    });
-
-    mm4.add("(max-width:820px)",()=>{
-        $('.presbyopia_section01').removeAttr('style');
-    });
-
-</script>
+<script type="module" src="/js/kjy/main/presbyopia/presbyopia.js"></script>
 
 <?php
     include_once $_SERVER["DOCUMENT_ROOT"]."/layout/_end.php";

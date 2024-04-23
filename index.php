@@ -25,15 +25,7 @@
     </div>
 </div>
 
-<script>
-    gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
-
-    ScrollSmoother.create({
-        smooth: 1,
-        effects: true,
-    });
-    
-</script>
+<script type="module" src="/js/kjy/main/index/index.js"></script>
 
 <?php
     include_once $_SERVER["DOCUMENT_ROOT"]."/layout/_end.php";
