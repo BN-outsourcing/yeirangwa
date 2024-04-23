@@ -25,5 +25,4 @@ export default ()=>{
         $('.presbyopia_section01').removeAttr('style');
     });
 
-
 }

@@ -8,7 +8,9 @@ export default ()=>{
 
     mm2.add("(min-width:821px)",()=>{
 
-        const scrollTween = gsap.to('._main .visual-box .smile_section01',{
+        const scrollTween = gsap.fromTo('._main .visual-box .smile_section01',{
+            x : ()=> 4024,
+        },{
             x : ()=> -(4024 - window.innerWidth),
             ease : "none",
             scrollTrigger : {
@@ -80,7 +82,7 @@ export default ()=>{
         gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .smile_section01 .sc01_box .p",
-                markers : true,
+                // markers : true,
                 end : "top center",
                 scrub : 1,
             }

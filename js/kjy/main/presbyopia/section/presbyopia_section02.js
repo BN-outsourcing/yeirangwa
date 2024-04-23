@@ -1,5 +1,7 @@
 "use strict";
 
+gsap.registerPlugin(ScrollTrigger);
+
 export default ()=>{
 
     gsap.timeline({
@@ -33,8 +35,13 @@ export default ()=>{
         .from('._main .presbyopia_section02 .back',{
             opacity : 0
         })
-        .from('._main .presbyopia_section02 .poa',{
-            top : "100%",
+
+        const ani = pretl.fromTo('._main .presbyopia_section02 .poa',{
+            xPercent : -50,
+            top : "100%"
+        },{
+            xPercent : -50,
+            top : "-20%",
             ease : "none"
         });
         
@@ -43,27 +50,29 @@ export default ()=>{
                 opacity : 0.2,
                 scrollTrigger : {
                     trigger : e,
-                    start : ()=>window.innerHeight / 2,
-                    end : "bottom center",
-                    // markers : true,
+                    animation : ani,
+                    start : "top center",
                     scrub : 1,
+                    // markers : true,
                 }
             })
         });
+        
 
         pretl.from('._main .presbyopia_section02 .poa p',{
             opacity : 0.2,
             scrollTrigger : {
                 trigger : '._main .presbyopia_section02 .poa p',
-                start : "top+=300% bottom-=30%",
-                end : "bottom center",
+                animation : ani,
+                start : "top center",
                 scrub : 1,
+                // markers : true,
             }
         });
 
     });
 
-    mm3.add("(max-width:821px)",()=>{
+    mm3.add("(max-width:820px)",()=>{
 
         gsap.utils.toArray('._main .presbyopia_section02 .poa ul li').forEach((e,i)=>{
             gsap.from(e,{

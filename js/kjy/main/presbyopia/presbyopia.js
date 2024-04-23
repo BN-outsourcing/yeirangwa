@@ -2,6 +2,7 @@
 
 "use strict";
 import { init } from "../common/common.js";
+import presbyopia_section01 from "./section/presbyopia_section01.js";
 import presbyopia_section02 from "./section/presbyopia_section02.js";
 
 gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
@@ -25,5 +26,6 @@ gsap.timeline({})
     opacity : 0
 },">-=25%");
 
+presbyopia_section01();
 presbyopia_section02();
 init();

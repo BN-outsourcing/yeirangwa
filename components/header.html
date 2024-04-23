@@ -87,10 +87,54 @@
 
 <script>
 
+    gsap.registerPlugin(ScrollToPlugin);
+
     $(window).click(function(e){
 
         if($(e.target).closest('.headerNav.active').length === 0 || !$(e.target).closest('.headerNav').hasClass('active')){
             $('.headerNav').removeClass('active');
+        }
+
+    });
+
+    const OPTION = {
+        "Home" : "/",
+        "예일안과 소개" : "/?page=sec02",
+        "스마일라식" : "/smilelasik.php",
+        "노안 · 백내장" : "/presbyopia.php",
+        "의료진소개" : "/smilelasik.php?page=sec06",
+        "연혁" : "/smilelasik.php?page=sec07",
+        "Eye Talk" : "/smilelasik.php?page=sec08",
+        "Yeal Talk" : "/smilelasik.php?page=sec09",
+        "오시는길" : "/smilelasik.php?page=sec10",
+        "진료시간" : "/smilelasik.php?page=sec11",
+        "문의하기" : "/smilelasik.php?page=sec11&el=rt"
+    }
+
+    $('.headerNav .depth a').click(function(e){
+        
+        e.preventDefault();
+        const text = $(this).text();
+        window.location.href = OPTION[text];
+        return false;
+
+    });
+
+    const urlObject = new URL(window.location.href);
+
+    const queryString = urlObject.searchParams;
+
+    window.addEventListener('load',function(){
+        
+        if(queryString.get('page') === null) return;
+
+        if(queryString.get('page') == "sec11" && queryString.get('el') !== null){
+
+            return gsap.to(window, { duration: 1, scrollTo: '._main .sec11 .rt' });
+
+        }else{
+
+            return gsap.to(window, { duration: 1, scrollTo: `._main .${queryString.get('page')}` });
         }
 
     });
