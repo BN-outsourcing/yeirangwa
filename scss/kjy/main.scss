@@ -491,7 +491,7 @@
             left: 0;
             height: 100%;
             z-index: 3;
-            transform: translateX(100%);
+            transform: translateX(100vw);
         }
         
 
@@ -1028,6 +1028,7 @@
         background: #fff;
         height: 100vh;
         padding: 0 440px 0 240px;
+        position: relative;
 
         .top {
             position: absolute;
@@ -1123,20 +1124,20 @@
             box-sizing: border-box;
             display: block;
 
+            .top {
+                position: static;
+                text-align: center;
+                transform: none;
+                margin-bottom: 30/20*1em;
+                font-size: 20px;
+            }
+
             .imbox {
                 width: 70%;
                 margin: 0 auto;
 
                 + .imbox {
                     margin: 125px auto 0;
-                }
-
-                .top {
-                    position: static;
-                    text-align: center;
-                    transform: none;
-                    margin-bottom: 30/20*1em;
-                    font-size: 20px;
                 }
 
                 .num {

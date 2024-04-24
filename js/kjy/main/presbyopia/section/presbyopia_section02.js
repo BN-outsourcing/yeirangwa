@@ -55,7 +55,6 @@ export default ()=>{
             opacity : 0.2,
             scrollTrigger : {
                 trigger : '._main .presbyopia_section02 .poa p',
-                animation : ani,
                 end : "bottom center",
                 scrub : 1,
                 // markers : true,
