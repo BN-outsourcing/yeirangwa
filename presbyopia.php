@@ -31,7 +31,9 @@
                     </div>
 
                     <a href="/smilelasik.php" class="circle-box" style="background-image: url('/asset/img/main/smilelasik_circle.png');">
-                        <div class="circle"></div>
+                        <div class="circle" 
+                            style="background-image: url('/asset/img/main/smilelasik_img.png"
+                        ></div>
                     </a>
 
                 </div>

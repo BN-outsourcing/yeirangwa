@@ -11,8 +11,8 @@ const FLIPOPTION = [
         `
     },
     {
-        team : `의학박사 / 대표원장 <span>심형석2</span>`,
-        name : "Shim Hyeongseok2",
+        team : `전문의 / 원장 <span>임남기</span>`,
+        name : "Lim Namgi",
         desc : `
             아름다운 눈, 소중한 눈,<br/>
             눈의 건강을 지키는 일이 저희 예일안과의<br/>
@@ -20,8 +20,8 @@ const FLIPOPTION = [
         `
     },
     {
-        team : `의학박사 / 대표원장 <span>심형석3</span>`,
-        name : "Shim Hyeongseok3",
+        team : `전문의 / 원장 <span>김민우</span>`,
+        name : "Kim Minwoo",
         desc : `
             아름다운 눈, 소중한 눈,<br/>
             눈의 건강을 지키는 일이 저희 예일안과의<br/>
@@ -29,8 +29,8 @@ const FLIPOPTION = [
         `
     },
     {
-        team : `의학박사 / 대표원장 <span>심형석4</span>`,
-        name : "Shim Hyeongseok4",
+        team : `전문의 / 원장 <span>권민재</span>`,
+        name : "Kwon MinJae",
         desc : `
             아름다운 눈, 소중한 눈,<br/>
             눈의 건강을 지키는 일이 저희 예일안과의<br/>
@@ -63,7 +63,10 @@ export default ()=>{
             el : "._main .sec06 .warpbox .paging",
             bulletClass : 'null',
             bulletActiveClass : "active",
-            renderBullet : (index, className)=>`<li class="${className}">${String(index+1).padStart(2,'0')} 과</li>`
+            renderBullet : (index, className)=>{
+                if(index === 3) return `<li class="${className}">05 과</li>`
+                return`<li class="${className}">${String(index+1).padStart(2,'0')} 과</li>`;
+            }
         },
         on : {
             init : (swiper)=>{

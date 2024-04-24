@@ -37,10 +37,10 @@ export default ()=> {
     sec03MM.add("(min-width:821px)",()=>{
         const sec03Tl = gsap.timeline({
             scrollTrigger : {
-                trigger : "._main .sec03 .wrapper",
+                trigger : "._main .sec03",
                 start : "center center",
                 pin : true,
-                end : "+=300%",
+                end : "+=350%",
                 scrub : 1,
             }
         });
@@ -49,7 +49,8 @@ export default ()=> {
             if(i >= 1){
                 sec03Tl.from(e,{
                     x : window.innerWidth,
-                    onStart : ()=>{
+                    ease : "none",
+                    onComplete : ()=>{
                         $('._main .sec03 .page p').removeClass('act');
                         $('._main .sec03 .page p').eq(i).addClass('act');
                     },
@@ -60,6 +61,9 @@ export default ()=> {
                 })
             }
         });
+
+        sec03Tl.set({},{},"+=1%");
+
     });
 
     sec03MM.add("(max-width:821px)",()=>{

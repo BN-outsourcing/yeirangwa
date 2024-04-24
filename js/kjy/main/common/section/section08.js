@@ -16,16 +16,18 @@ export default ()=>{
     /* 갯수는 동일해야합니다. */
     const b = new Swiper('.sec08 .box .b',{
         slidesPerView: 1,
-        loop : true
-    });
-    const s = new Swiper('.sec08 .box .s',{
-        slidesPerView: 0.5,
         spaceBetween: 20,
         loop : true,
         navigation : {
             prevEl : "._main .sec08 .box .s-box .nav .prev",
             nextEl : "._main .sec08 .box .s-box .nav .next",
         },
+    });
+    
+    const s = new Swiper('.sec08 .box .s',{
+        slidesPerView: 0.5,
+        spaceBetween: 20,
+        loop : true,
         breakpoints : {
             821 : {
                 slidesPerView: 1.3,
@@ -37,8 +39,9 @@ export default ()=>{
             }
         }
     });
-    b.controller.control  = s;
+
     s.controller.control  = b;
+    b.controller.control  = s;
 
     gsap.timeline({
         scrollTrigger : {

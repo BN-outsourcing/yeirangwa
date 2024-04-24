@@ -23,12 +23,14 @@ export default ()=>{
 
     mm3.add("(min-width:821px)",()=>{
 
-        const pretl = gsap.timeline({
+        gsap.timeline({
             scrollTrigger : {
-                trigger : "._main .presbyopia_section02",
+                trigger : "._main .presbyopia_section02 .full",
+                endTrigger : "._main .presbyopia_section02 .poa",
                 start : "top top",
+                end : "bottom bottom",
                 pin : true,
-                end : "+=300%",
+                pinSpacing : false,
                 scrub : 1,
             }
         })
@@ -36,22 +38,12 @@ export default ()=>{
             opacity : 0
         })
 
-        const ani = pretl.fromTo('._main .presbyopia_section02 .poa',{
-            xPercent : -50,
-            top : "100%"
-        },{
-            xPercent : -50,
-            top : "-20%",
-            ease : "none"
-        });
-        
         gsap.utils.toArray('._main .presbyopia_section02 .poa ul li').forEach((e,i)=>{
             gsap.from(e,{
                 opacity : 0.2,
                 scrollTrigger : {
                     trigger : e,
-                    animation : ani,
-                    start : "top center",
+                    end : "bottom center",
                     scrub : 1,
                     // markers : true,
                 }
@@ -59,16 +51,16 @@ export default ()=>{
         });
         
 
-        pretl.from('._main .presbyopia_section02 .poa p',{
+        gsap.from('._main .presbyopia_section02 .poa p',{
             opacity : 0.2,
             scrollTrigger : {
                 trigger : '._main .presbyopia_section02 .poa p',
                 animation : ani,
-                start : "top center",
+                end : "bottom center",
                 scrub : 1,
                 // markers : true,
             }
-        });
+        })
 
     });
 

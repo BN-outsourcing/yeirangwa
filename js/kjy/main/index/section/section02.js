@@ -75,13 +75,44 @@ export default ()=> {
     ScrollTrigger.create({
         trigger : "._main .sec02 .two .bt",
         endTrigger : "._main .sec02 .two .area",
-        start : "top center",
-        end : "bottom bottom",
+        start : "center center",
+        end : "bottom center",
         // markers : true,
         pin : true,
         pinSpacing : false,
     });
 
+    // 숫자 카운트
+    $('._main .sec02 .two .area dl dd .count').each((i,e)=>{
+        if(i === 0){
+            gsap.from(e,{
+                innerText : 0,
+                duration: 2,
+                snap : {
+                    innerText : 0.01
+                },
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=20%",
+                    // markers : true,
+                }
+            })
+        }else{
+            gsap.from(e,{
+                innerText : 0,
+                duration: 1,
+                snap : {
+                    innerText : 1
+                },
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=20%",
+                    // markers : true,
+                }
+            })
+        }
+    })
+    
 
     $('._main .sec02 .more-box .more-flex .box').click(function(e){
 
@@ -95,10 +126,10 @@ export default ()=> {
 
             switch($(this).index()){
                 case 0 :
-                    imgSrc = "/asset/img/main/sec02_01.png";
+                    imgSrc = "/asset/img/main/SMILE_LASIK_IMG.png";
                     break;
                 case 1 :
-                    imgSrc = "/asset/img/main/sec02_02.png";
+                    imgSrc = "/asset/img/main/PRESB_YOPIA_IMG.png";
                     break;
             }
 

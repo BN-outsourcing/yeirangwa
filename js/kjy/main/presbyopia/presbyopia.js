@@ -1,7 +1,7 @@
 /* 백내장 스크립트 */
 
 "use strict";
-import { init } from "../common/common.js";
+import { init, menuHoverHanlder } from "../common/common.js";
 import presbyopia_section01 from "./section/presbyopia_section01.js";
 import presbyopia_section02 from "./section/presbyopia_section02.js";
 
@@ -26,6 +26,7 @@ gsap.timeline({})
     opacity : 0
 },">-=25%");
 
+menuHoverHanlder();
 presbyopia_section01();
 presbyopia_section02();
 init();

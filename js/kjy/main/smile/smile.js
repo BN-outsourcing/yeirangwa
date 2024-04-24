@@ -1,7 +1,7 @@
 /* 스마일 라식 스크립트 */
 
 "use strict";
-import { init } from "../common/common.js";
+import { init, menuHoverHanlder } from "../common/common.js";
 import section03 from "./section/section03.js";
 import section04 from "./section/section04.js";
 import section05 from "./section/section05.js";
@@ -28,6 +28,7 @@ gsap.timeline({})
     opacity : 0
 },">-=25%");
 
+menuHoverHanlder();
 smile_section01();
 section03();
 section04();

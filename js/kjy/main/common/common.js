@@ -6,12 +6,12 @@ import section07 from "./section/section07.js";
 import section08 from "./section/section08.js";
 
 export const menuHoverHanlder = ()=>{
-
-    $('.menu-hover').click(function(e){
+    
+    $('.menu-hover').mouseover(function(e){
         e.stopPropagation();
         $('.headerNav').addClass('active');
     });
-
+    
 }
 
 export const init = ()=>{

@@ -11,7 +11,7 @@
         <!-- CSS -->
         <link rel="stylesheet" href="/css/reset.css">
         <link rel="stylesheet" href="/css/scroll.css">
-        <link rel="stylesheet" href="/css/main.css">
+        <!-- <link rel="stylesheet" href="/css/main.css"> -->
         <link rel="stylesheet" href="/scss/kjy/main.css">
 
         <!-- FONT -->
@@ -31,6 +31,7 @@
         <script src="/plugin/gsap3.12.2/ScrollSmoother.min.js"></script>
         <script src="/plugin/gsap3.12.2/SplitText.min.js"></script>
         <script src="/plugin/gsap3.12.2/ScrollToPlugin.min.js"></script>
+        <script src="/plugin/gsap3.12.2/DrawSVGPlugin.min.js"></script>
         <script src="/plugin/jquery.js"></script>
 
     </head>

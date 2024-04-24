@@ -89,12 +89,18 @@
 
     gsap.registerPlugin(ScrollToPlugin);
 
-    $(window).click(function(e){
+    /* $(window).click(function(e){
 
         if($(e.target).closest('.headerNav.active').length === 0 || !$(e.target).closest('.headerNav').hasClass('active')){
             $('.headerNav').removeClass('active');
         }
 
+    }); */
+
+    $('.headerNav').mouseleave(function(){
+        if($(this).hasClass('active')){
+            $('.headerNav').removeClass('active');
+        }
     });
 
     const OPTION = {

@@ -1,5 +1,7 @@
 "use strict";
 
+gsap.registerPlugin(DrawSVGPlugin)
+
 export default ()=>{
 
     ScrollTrigger.create({
@@ -87,9 +89,9 @@ export default ()=>{
         })
 
 
-        gsap.to('._main .sec07 .history .h-flex .line div',{
-            width : "100%",
-            ease : "none",
+        gsap.from('._main .sec07 .history .h-flex .line svg path',{
+            drawSVG: 0,
+            ease : "none",  
             scrollTrigger : {
                 trigger : "._main .sec07 .history .h-flex",
                 containerAnimation : hFlex,
