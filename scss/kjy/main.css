@@ -1341,8 +1341,7 @@
   font-family: "Playfair Display";
   font-weight: bold;
   color: #fff;
-  opacity: 0.6;
-  mix-blend-mode: soft-light;
+  opacity: 0.2;
   position: absolute;
   top: 20%;
   left: 0;
@@ -1440,10 +1439,10 @@
   background-size: cover;
 }
 ._main .sec02 .more-box .more-flex .box:nth-of-type(1) .img {
-  background-image: url(/asset/img/main/SMILE_LASIK_IMG.png);
+  background-image: url(/asset/img/main/sec02_01.jpg);
 }
 ._main .sec02 .more-box .more-flex .box:nth-of-type(2) .img {
-  background-image: url(/asset/img/main/PRESB_YOPIA_IMG.png);
+  background-image: url(/asset/img/main/sec02_02.jpg);
 }
 ._main .sec02 .more-box .more-flex .box::after {
   content: "";

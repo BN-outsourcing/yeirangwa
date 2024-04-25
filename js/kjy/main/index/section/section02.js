@@ -126,10 +126,10 @@ export default ()=> {
 
             switch($(this).index()){
                 case 0 :
-                    imgSrc = "/asset/img/main/SMILE_LASIK_IMG.png";
+                    imgSrc = "/asset/img/main/sec02_01.jpg";
                     break;
                 case 1 :
-                    imgSrc = "/asset/img/main/PRESB_YOPIA_IMG.png";
+                    imgSrc = "/asset/img/main/sec02_02.jpg";
                     break;
             }
 

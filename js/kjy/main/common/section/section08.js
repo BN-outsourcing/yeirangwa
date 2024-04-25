@@ -13,23 +13,11 @@ export default ()=>{
         }
     });
 
-    /* 갯수는 동일해야합니다. */
-    
-    const b = new Swiper('.sec08 .box .b',{
-        slidesPerView: 1,
-        spaceBetween: 20,
-        loop : true,
-        navigation : {
-            prevEl : "._main .sec08 .box .s-box .nav .prev",
-            nextEl : "._main .sec08 .box .s-box .nav .next",
-        },
-    });
 
     const s = new Swiper('.sec08 .box .s',{
         slidesPerView: 0.5,
         spaceBetween: 20,
-        loop : true,
-        slidesPerGroup : 2,
+        touchRatio : 0,
         breakpoints : {
             821 : {
                 slidesPerView: 1.7,
@@ -42,9 +30,36 @@ export default ()=>{
         }
     });
 
+    const b = new Swiper('.sec08 .box .b',{
+        slidesPerView: 1,
+        spaceBetween: 20,
+        touchRatio : 0,
+        on : {
+            slideChange : (swiper)=>{
+                const {realIndex} = swiper;
+                s.slideTo(realIndex, 600);
+            }
+        }
+    });
 
-    b.controller.control = s;
-    s.controller.control = b;
+    $('._main .sec08 .box .s-box .nav li.next').click(function(){
+        const {realIndex,slides} = b;
+        if(realIndex === slides.length-1){
+            b.slideTo(0);
+        }else{
+            b.slideNext();
+        }
+    });
+
+    $('._main .sec08 .box .s-box .nav li.prev').click(function(){
+        const {realIndex,slides} = b;
+        if(realIndex === 0){
+            b.slideTo(slides.length-1);
+        }else{
+            b.slidePrev();
+        }
+    });
+
 
     gsap.timeline({
         scrollTrigger : {
