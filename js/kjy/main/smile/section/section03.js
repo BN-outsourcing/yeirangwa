@@ -45,8 +45,11 @@ export default ()=> {
 
     const sec03MM = gsap.matchMedia();
 
+    let sec03Tl;
+
     sec03MM.add("(min-width:821px)",()=>{
-        const sec03Tl = gsap.timeline({
+
+        sec03Tl = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .sec03",
                 start : "center center",
@@ -69,7 +72,8 @@ export default ()=> {
                         $('._main .sec03 .page p').removeClass('act');
                         $('._main .sec03 .page p').eq(i-1).addClass('act');
                     }
-                })
+                },`a${i}`);
+
             }
         });
 
@@ -79,7 +83,7 @@ export default ()=> {
 
     sec03MM.add("(max-width:821px)",()=>{
 
-        const sec03Tl = gsap.timeline({
+        const sec03Tl2 = gsap.timeline({
             scrollTrigger : {
                 trigger : "._main .sec03 .cir-box",
                 start : "top bottom-=10%",
@@ -88,15 +92,47 @@ export default ()=> {
 
         $('._main .sec03 .cir-box .img').each((i,e)=>{
             if(i >= 1){
-                sec03Tl.from(e,{
+                sec03Tl2.from(e,{
                     x : window.innerWidth,
                 })
             }
         });
 
+
+        $('._main .sec03 .cir-box .img').each((i,e)=>{
+            gsap.from(e,{
+                y : 100,
+                opacity : 0,
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=10%"
+                }
+            })
+        })
+
     });
 
 
-    $('._main .sec03 .page p').click(function(){});
+    $('._main .sec03 .page p').click(function(){
+
+        const index = $(this).index();
+
+        if(window.innerWidth >= 821){
+
+            switch(index){
+                case 0 :
+                    gsap.to(window,{scrollTo : {y : sec03Tl.scrollTrigger.start, offsetY : 10}});
+                break;
+                case 1 :
+                    gsap.to(window,{scrollTo : {y : sec03Tl.scrollTrigger.labelToScroll('a2'), offsetY : -10}});
+                break;
+                case 2 :
+                    gsap.to(window,{scrollTo : sec03Tl.scrollTrigger.end});
+                break;
+            }
+
+        }
+
+    });
 
 }

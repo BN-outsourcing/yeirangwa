@@ -46,6 +46,9 @@
     right: 5%;
     bottom: 2.5%;
   }
+  .top_home #top, .top_home #home {
+    font-size: 14px;
+  }
 }
 
 .fix-img {
@@ -955,7 +958,7 @@
     font-size: 20px;
   }
   ._main .presbyopia_section01 .imbox {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
   }
   ._main .presbyopia_section01 .imbox + .imbox {
@@ -965,8 +968,8 @@
     font-size: 12.1951219512vw;
   }
   ._main .presbyopia_section01 .imbox p {
-    font-size: 2.9268292683vw;
-    transform: translate(-50%, 50%);
+    font-size: 24px;
+    transform: translate(-50%, 75%);
   }
 }
 @media screen and (max-width: 480px) {
@@ -974,6 +977,9 @@
     font-size: 16px;
     width: 95vw;
     transform: translateX(-16%);
+  }
+  ._main .presbyopia_section01 .imbox + .imbox {
+    margin: 100px auto 0;
   }
   ._main .presbyopia_section01 .imbox .num {
     font-size: 48px;

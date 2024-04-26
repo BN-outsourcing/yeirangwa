@@ -43,13 +43,13 @@ export default ()=>{
             ease : "none",
             scrollTrigger : {
                 // trigger : "._main .presbyopia_section01",
-                trigger : "._main .presbyopia_section01",
+                trigger : "._main .presbyopia_section01 .top",
                 endTrigger : "._main .presbyopia_section01",
                 containerAnimation : scrollTween,
-                start : "left left",
+                start : "left center",
                 end : "right right",
                 scrub : true,
-                invalidateOnRefresh : true
+                invalidateOnRefresh : true,
                 // markers :true,
             }
         })
@@ -58,6 +58,19 @@ export default ()=>{
 
     mm4.add("(max-width:820px)",()=>{
         $('.presbyopia_section01').removeAttr('style');
+
+
+        $('._main .presbyopia_section01 .imbox').each((i,e)=>{
+            gsap.from(e,{
+                y : 100,
+                opacity : 0,
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=10%"
+                }
+            })
+        })
+
     });
 
 }

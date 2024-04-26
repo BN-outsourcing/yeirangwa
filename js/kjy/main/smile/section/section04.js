@@ -33,17 +33,14 @@ export default ()=>{
             stagger: 0.05
         });
 
-        const tl = gsap.timeline({
-            scrollTrigger : {
-                trigger : "._main .sec04 ul",
-                start : "top bottom-=10%"
-            }
-        });
-
         gsap.utils.toArray('._main .sec04 ul li').forEach((e,i)=>{
-            tl.from(e,{
+            gsap.from(e,{
                 y : 50,
-                opacity : 0
+                opacity : 0,
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=10%"
+                }
             }) 
         });
 

@@ -52,6 +52,11 @@
         font-size: 14px;
         right: 5%;
         bottom: 2.5%;
+
+        #top,#home {
+            font-size: 14px;
+        }
+
     }
 
 }
@@ -1159,7 +1164,7 @@
             }
 
             .imbox {
-                width: 70%;
+                width: 80%;
                 margin: 0 auto;
 
                 + .imbox {
@@ -1171,8 +1176,8 @@
                 }
 
                 p {
-                    font-size: 24*100/820*1vw;
-                    transform: translate(-50%,50%);
+                    font-size: 24px;
+                    transform: translate(-50%,75%);
                 }
 
             }
@@ -1186,6 +1191,10 @@
                     font-size: 16px;
                     width: 95vw;
                     transform: translateX(-16%);
+                }
+
+                + .imbox {
+                    margin: 100px auto 0;
                 }
 
                 .num {

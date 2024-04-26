@@ -53,14 +53,7 @@
             ?>
 
             <div class="smile_video">
-                <iframe 
-                    src="https://www.youtube.com/embed/1oJFShANMTc?si=A74fi8oQJc4tZ6ks&playsinline=0&loop=1&controls=0" 
-                    title="YouTube video player" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    allowfullscreen
-                ></iframe>
+                <div id="player"></div>
             </div>
 
             <?php
@@ -116,6 +109,47 @@
         </main>  
     </div>
 </div>
+
+<script>
+    
+    gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
+    
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. API 코드를 다운로드 받은 다음에 <iframe>을 생성하는 기능 (youtube player도 더불어)
+    var player;
+    function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+            videoId : "1oJFShANMTc",
+            playerVars : {
+                controls : 0,
+                mute : 1,
+            },
+            events: {
+                'onReady': onPlayerReady
+            }
+        });
+    }
+    
+    
+    // 4. API는 비디오 플레이어가 준비되면 아래의 function을 불러올 것이다.
+    function onPlayerReady(event) {
+        
+        ScrollTrigger.create({
+            trigger : ".smile_video",
+            start : "top bottom-=10%",
+            // markers : true,
+            onEnter : ()=>{
+                event.target.playVideo();
+            }
+        });
+
+    }
+
+</script>
 
 <script type="module" src="/js/kjy/main/smile/smile.js"></script>
 

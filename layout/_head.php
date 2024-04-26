@@ -33,7 +33,6 @@
         <script src="/plugin/gsap3.12.2/ScrollToPlugin.min.js"></script>
         <script src="/plugin/gsap3.12.2/DrawSVGPlugin.min.js"></script>
         <script src="/plugin/jquery.js"></script>
-        <script src="https://www.youtube.com/iframe_api"></script>
 
     </head>
 <body>

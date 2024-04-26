@@ -16,7 +16,7 @@ ScrollSmoother.create({
 
 $('._header').addClass('white');
 
-gsap.timeline({})
+gsap.timeline()
 .from('._main .visual .tbx dl dt',{
     y : 50,
     opacity : 0
