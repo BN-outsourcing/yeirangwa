@@ -28,7 +28,7 @@ export default ()=>{
                 trigger : "._main .smile_section01 .sc01_box .p",
                 // markers : true,
                 containerAnimation: scrollTween,
-                start : "left right",
+                start : "left center",
                 end : "right center",
                 scrub : 1,
             }

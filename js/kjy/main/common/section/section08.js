@@ -4,6 +4,17 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .sec08",
+        start : "top top",
+        onEnter : ()=>{
+            $('._header').removeClass('white');
+        },
+        onLeaveBack : ()=>{
+            $('._header').addClass('white');
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger : "._main .sec08",
         start : "top center",
         onEnter : ()=>{
             $('.menu-hover').addClass('black');

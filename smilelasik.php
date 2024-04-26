@@ -50,12 +50,25 @@
                 # smile 3
                 include $_SERVER["DOCUMENT_ROOT"]."/components/main/smile/section03.html";
 
+            ?>
+
+            <div class="smile_video">
+                <iframe 
+                    src="https://www.youtube.com/embed/1oJFShANMTc?si=A74fi8oQJc4tZ6ks&playsinline=0&loop=1&controls=0" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                ></iframe>
+            </div>
+
+            <?php
                 # smile 4
                 include $_SERVER["DOCUMENT_ROOT"]."/components/main/smile/section04.html";
 
                 # smile 5
                 include $_SERVER["DOCUMENT_ROOT"]."/components/main/smile/section05.html";
-
             ?>
             
             <?php
@@ -107,5 +120,6 @@
 <script type="module" src="/js/kjy/main/smile/smile.js"></script>
 
 <?php
+    $home = true;
     include_once $_SERVER["DOCUMENT_ROOT"]."/layout/_end.php";
 ?>

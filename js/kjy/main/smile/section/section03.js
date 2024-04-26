@@ -1,8 +1,19 @@
 "use strict";
 
-gsap.registerPlugin(SplitText);
+gsap.registerPlugin(SplitText,ScrollToPlugin);
 
 export default ()=> {
+
+    ScrollTrigger.create({
+        trigger : "._main .sec03",
+        start : "top top",
+        onEnter : ()=>{
+            $('._header').removeClass('white');
+        },
+        onLeaveBack : ()=>{
+            $('._header').addClass('white');
+        }
+    });
 
     ScrollTrigger.create({
         trigger : "._main .sec03",
@@ -83,6 +94,9 @@ export default ()=> {
             }
         });
 
-    })
+    });
+
+
+    $('._main .sec03 .page p').click(function(){});
 
 }

@@ -4,6 +4,21 @@ gsap.registerPlugin(SplitText);
 
 export default ()=> {
 
+    ScrollTrigger.create({
+        trigger : "._main .sec01 .rel",
+        start : "top top",
+        // markers : true,
+        onEnter : ()=>{
+            $('._header').addClass('white');
+        },
+        onLeaveBack : ()=>{
+            $('._header').removeClass('white');
+        },
+        onEnterBack : ()=>{
+            $('._header').addClass('white');
+        }
+    });
+
     const split = new SplitText($('._main .sec01 .rel > h3'));
     const split2 = new SplitText($('._main .sec01 .img h3'));
 

@@ -14,6 +14,8 @@ ScrollSmoother.create({
     effects: true,
 });
 
+$('._header').addClass('white');
+
 gsap.timeline({})
 .from('._main .visual .tbx dl dt',{
     y : 50,

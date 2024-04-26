@@ -14,13 +14,23 @@ export default ()=> {
     });
 
     ScrollTrigger.create({
+        trigger : "._main .sec02",
+        start : "top top",
+        onEnter : ()=>{
+            $('._header').removeClass('white');
+        }
+    });
+
+    ScrollTrigger.create({
         trigger : "._main .sec02 .two .area > div:nth-of-type(1)",
         start : "top center",
         // markers : true,
         onEnter : ()=>{
+            $('._header').addClass('white');
             $('.menu-hover').removeClass('black');
         },
         onLeaveBack : ()=>{
+            $('._header').removeClass('white');
             $('.menu-hover').addClass('black');
         }
     });
@@ -45,22 +55,47 @@ export default ()=> {
         }
     });
 
-    gsap.timeline({
-        scrollTrigger : {
-            trigger : "._main .sec02",
-            endTrigger : "._main .sec02 .two",
-            // markers : true,
-            start : "top top",
-            end : "bottom center",
-            scrub : 1,
-        }
+    const mm = gsap.matchMedia();
+
+    mm.add("(min-width:821px)",()=>{
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .sec02",
+                endTrigger : "._main .sec02 .two",
+                // markers : true,
+                start : "top top",
+                end : "bottom center",
+                scrub : 1,
+            }
+        })
+        .to('._main .sec02 .wallpaper',{
+            clipPath: "circle(100% at 50% 50%)",
+        },'a')
+        .to('._main .sec02 .wallpaper .back',{
+            opacity : 1
+        },'a');
     })
-    .to('._main .sec02 .wallpaper',{
-        clipPath: "circle(100% at 50% 50%)",
-    },'a')
-    .to('._main .sec02 .wallpaper .back',{
-        opacity : 1
-    },'a')
+
+    mm.add("(max-width:820px)",()=>{
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .sec02",
+                endTrigger : "._main .sec02 .two",
+                // markers : true,
+                start : "top center",
+                end : "bottom center",
+                scrub : 1,
+            }
+        })
+        .to('._main .sec02 .wallpaper',{
+            clipPath: "circle(100% at 50% 50%)",
+        },'a')
+        .to('._main .sec02 .wallpaper .back',{
+            opacity : 1
+        },'a');
+    })
+
+
 
     ScrollTrigger.create({
         trigger : "._main .sec02 .wallpaper",

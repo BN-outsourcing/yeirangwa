@@ -21,27 +21,32 @@ export default ()=>{
             }
         });
 
-        /* ScrollTrigger.create({
-            trigger : "._main .presbyopia_section01 .top",
-            endTrigger : "._main .presbyopia_section01",
+        ScrollTrigger.create({
+            trigger : "._main .presbyopia_section01",
             containerAnimation : scrollTween,
             start : "left left",
             end : "right right",
-            pin : true,
-            pinSpacing : true,
-            markers : true,
-            horizontal: true
-        }); */
+            scrub : true,
+            invalidateOnRefresh : true,
+            onEnter : ()=>{
+                $('._header').removeClass('white');
+                $('.menu-hover').addClass('black');
+            },
+            onLeaveBack : ()=>{
+                $('._header').addClass('white');
+                $('.menu-hover').removeClass('black');
+            }
+        })
 
         gsap.to("._main .presbyopia_section01 .top",{
-            left : ()=>(5290 - window.innerWidth) + 50,
+            left : ()=>(5290 - window.innerWidth/2) - $('._main .presbyopia_section01 .top').width()/2,
             ease : "none",
             scrollTrigger : {
                 // trigger : "._main .presbyopia_section01",
-                trigger : "._main .presbyopia_section01 .top",
+                trigger : "._main .presbyopia_section01",
                 endTrigger : "._main .presbyopia_section01",
                 containerAnimation : scrollTween,
-                start : "left-=50 left",
+                start : "left left",
                 end : "right right",
                 scrub : true,
                 invalidateOnRefresh : true

@@ -43,6 +43,17 @@ export default ()=>{
 
     ScrollTrigger.create({
         trigger : "._main .sec06",
+        start : "top top",
+        onEnter : ()=>{
+            $('._header').removeClass('white');
+        },
+        onLeaveBack : ()=>{
+            $('._header').addClass('white');
+        }
+    });
+
+    ScrollTrigger.create({
+        trigger : "._main .sec06",
         start : "top center",
         onEnter : ()=>{
             $('.menu-hover').addClass('black');
@@ -149,7 +160,12 @@ export default ()=>{
                 $('._main .sec06 .warpbox .tbx dl dt').html(FLIPOPTION[realIndex].team);
                 $('._main .sec06 .warpbox .tbx dl dd').html(FLIPOPTION[realIndex].name);
                 $('._main .sec06 .warpbox .tbx p').html(FLIPOPTION[realIndex].desc);
-                $('._main .sec06 .sbox .num').html(String(realIndex+1).padStart(2,0));
+
+                if(realIndex === 3) {
+                    $('._main .sec06 .sbox .num').html("05");
+                }else{
+                    $('._main .sec06 .sbox .num').html(String(realIndex+1).padStart(2,0));
+                }
     
                 gsap.timeline()
                 .set('._main .sec06 .sbox .num',{

@@ -105,5 +105,6 @@
 <script type="module" src="/js/kjy/main/presbyopia/presbyopia.js"></script>
 
 <?php
+    $home = true;
     include_once $_SERVER["DOCUMENT_ROOT"]."/layout/_end.php";
 ?>
