@@ -242,6 +242,8 @@
 
 
     @media screen and (max-width : 820px) {
+
+        overflow-y: auto;
         
         .logo {
             width: 125px;
@@ -250,6 +252,7 @@
 
         .depth {
             font-size: 18px;
+            margin-top: 50px;
         }
 
     }
@@ -1248,7 +1251,6 @@
                     letter-spacing: -0.04em;
                     line-height: (36/24);
                     word-break: keep-all;
-                    text-align: center;
                 }
             }
 
@@ -1342,6 +1344,7 @@
                     }
                     dd {
                         font-size: 16px;
+                        text-align: center;
                     }
                 }
             }

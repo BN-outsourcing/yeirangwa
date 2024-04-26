@@ -208,12 +208,16 @@
   transform: translateX(0%);
 }
 @media screen and (max-width: 820px) {
+  .headerNav {
+    overflow-y: auto;
+  }
   .headerNav .logo {
     width: 125px;
     margin: 0 auto;
   }
   .headerNav .depth {
     font-size: 18px;
+    margin-top: 50px;
   }
 }
 
@@ -1022,7 +1026,6 @@
   letter-spacing: -0.04em;
   line-height: 1.5;
   word-break: keep-all;
-  text-align: center;
 }
 ._main .presbyopia_section02 .poa {
   text-align: center;
@@ -1093,6 +1096,7 @@
   }
   ._main .presbyopia_section02 .full dl dd {
     font-size: 16px;
+    text-align: center;
   }
   ._main .presbyopia_section02 .poa {
     padding-bottom: 0;
