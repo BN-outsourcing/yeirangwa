@@ -64,6 +64,7 @@ export default ()=>{
             endTrigger : "._main .sec05",
             start : "top top+=10%",
             end : "bottom center",
+            pinType : "fixed",
             pin : true,
             pinSpacing : false
         })

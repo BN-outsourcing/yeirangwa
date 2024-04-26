@@ -97,25 +97,52 @@ export default ()=> {
 
 
 
-    ScrollTrigger.create({
-        trigger : "._main .sec02 .wallpaper",
-        endTrigger : "._main .sec02",
-        end : "bottom bottom",
-        // markers : true,
-        pin : true,
-        pinSpacing : false,
-        scrub : 1,
+    const mm2 = gsap.matchMedia();
+
+    mm2.add("(min-width:821px)",()=>{
+        ScrollTrigger.create({
+            trigger : "._main .sec02 .wallpaper",
+            endTrigger : "._main .sec02",
+            end : "bottom bottom",
+            // markers : true,
+            pin : true,
+            pinSpacing : false,
+        });
+    
+        ScrollTrigger.create({
+            trigger : "._main .sec02 .two .bt",
+            endTrigger : "._main .sec02 .two .area",
+            start : "center center",
+            end : "bottom center",
+            // markers : true,
+            pin : true,
+            pinSpacing : false,
+        });
     });
 
-    ScrollTrigger.create({
-        trigger : "._main .sec02 .two .bt",
-        endTrigger : "._main .sec02 .two .area",
-        start : "center center",
-        end : "bottom center",
-        // markers : true,
-        pin : true,
-        pinSpacing : false,
-    });
+    mm2.add("(max-width:820px)",()=>{
+        ScrollTrigger.create({
+            trigger : "._main .sec02 .wallpaper",
+            endTrigger : "._main .sec02",
+            end : "bottom bottom",
+            // markers : true,
+            pinType : "fixed",
+            pin : true,
+            pinSpacing : false,
+        });
+    
+        ScrollTrigger.create({
+            trigger : "._main .sec02 .two .bt",
+            endTrigger : "._main .sec02 .two .area",
+            start : "center center",
+            end : "bottom center",
+            // markers : true,
+            pinType : "fixed",
+            pin : true,
+            pinSpacing : false,
+        });
+    })
+    
 
     // 숫자 카운트
     $('._main .sec02 .two .area dl dd .count').each((i,e)=>{

@@ -87,7 +87,7 @@ export default ()=>{
                 $('._main .sec06 .warpbox .tbx p').html(FLIPOPTION[realIndex].desc);
                 $('._main .sec06 .sbox .num').html(String(realIndex+1).padStart(2,0));
     
-                gsap.timeline({
+                /* gsap.timeline({
                     scrollTrigger : {
                         trigger : "._main .sec06 .warpbox .tbx",
                         start : "top bottom-=10%"
@@ -152,7 +152,7 @@ export default ()=>{
                 .to('._main .sec06 .sbox .bt',{
                     x : 0,
                     opacity : 1
-                },'a')
+                },'a') */
     
             },
             slideChange : (swiper)=>{

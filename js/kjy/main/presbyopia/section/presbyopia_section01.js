@@ -59,6 +59,27 @@ export default ()=>{
     mm4.add("(max-width:820px)",()=>{
         $('.presbyopia_section01').removeAttr('style');
 
+        ScrollTrigger.create({
+            trigger : "._main .presbyopia_section01",
+            start : "top top",
+            onEnter : ()=>{
+                $('._header').removeClass('white');
+            },
+            onLeaveBack : ()=>{
+                $('._header').addClass('white');
+            }
+        })
+
+        ScrollTrigger.create({
+            trigger : "._main .presbyopia_section01",
+            start : "top center",
+            onEnter : ()=>{
+                $('.menu-hover').addClass('black');
+            },
+            onLeaveBack : ()=>{
+                $('.menu-hover').removeClass('black');
+            }
+        })
 
         $('._main .presbyopia_section01 .imbox').each((i,e)=>{
             gsap.from(e,{
