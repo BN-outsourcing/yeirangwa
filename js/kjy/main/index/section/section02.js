@@ -37,25 +37,57 @@ export default ()=> {
         }
     });
 
-    const h3Split = new SplitText('._main .sec02 .h3 p');
-    gsap.from(h3Split.chars, {
-        y: 100,
-        autoAlpha: 0, 
-        stagger: 0.05,
-        scrollTrigger : {
-            trigger : "._main .sec02 .h3",
-            start : "top bottom-=10%"
-        }
-    });
     
-    gsap.from('._main .sec02 .tbx', {
-        x: 100,
-        opacity : 0,
-        scrollTrigger : {
-            trigger : "._main .sec02 .tbx",
-            start : "top bottom-=10%"
-        }
-    });
+    const mmd = gsap.matchMedia();
+
+    mmd.add("(min-width:821px)",()=>{
+
+        const h3Split = new SplitText('._main .sec02 .h3 p');
+        gsap.from(h3Split.chars, {
+            y: 100,
+            autoAlpha: 0, 
+            stagger: 0.05,
+            scrollTrigger : {
+                trigger : "._main .sec02 .h3",
+                start : "top bottom-=10%"
+            }
+        });
+        
+        gsap.from('._main .sec02 .tbx', {
+            x: 100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : "._main .sec02 .tbx",
+                start : "top bottom-=10%"
+            }
+        });
+
+    })
+
+    mmd.add("(max-width:820px)",()=>{
+
+        const h3Split = new SplitText('._main .sec02 .h3 p');
+        gsap.from(h3Split.chars, {
+            y: 100,
+            autoAlpha: 0, 
+            stagger: 0.05,
+            scrollTrigger : {
+                trigger : "._main .sec02 .h3",
+                start : "top bottom-=10%"
+            }
+        });
+        
+        gsap.from('._main .sec02 .tbx', {
+            x: 100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : "._main .sec02 .tbx",
+                start : "top bottom-=10%"
+            }
+        });
+
+    })
+
 
     const mm = gsap.matchMedia();
 
@@ -96,8 +128,6 @@ export default ()=> {
             opacity : 1
         },'a');
     })
-
-
 
     const mm2 = gsap.matchMedia();
 

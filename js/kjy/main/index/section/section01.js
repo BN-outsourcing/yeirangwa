@@ -28,13 +28,11 @@ export default ()=> {
         }
     })
     .from(split.chars,{
-        x : "-50%",
         y : 100,
         opacity : 0,
         stagger: 0.05
     },'a')
     .from(split2.chars,{
-        x : "-50%",
         y : 100,
         opacity : 0,
         stagger: 0.05
@@ -50,10 +48,12 @@ export default ()=> {
         }
     })
     .to($('._main .sec01 .rel > h3'),{
-        y : "-90%"
+        y : "-90%",
+        x : "-50%"
     },'a')
     .to($('._main .sec01 .img h3'),{
-        y : "-90%"
+        y : "-90%",
+        x : "-50%"
     },'a');
 
     new Swiper('.sec01 .swiper',{
