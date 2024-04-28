@@ -72,32 +72,94 @@ export default ()=>{
     });
 
 
-    gsap.timeline({
-        scrollTrigger : {
-            trigger : "._main .sec08 .top",
-            start : "top bottom-=10%"
-        }
-    })
-    .from('._main .sec08 .top dl dt',{
-        y : 50,
-        opacity : 0
-    })
-    .from('._main .sec08 .top dl dd',{
-        y : 50,
-        opacity : 0
-    })
-    .from('._main .sec08 .top a',{
-        x : 50,
-        opacity : 0
+    const mm = gsap.matchMedia()
+    mm.add("(min-width:821px)",()=>{
+
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .sec08 .top",
+                start : "top bottom-=10%",
+            }
+        })
+        .fromTo('._main .sec08 .top dl dt',{
+            y : 50,
+            opacity : 0
+        },{
+            y : 0,
+            opacity : 1
+        })
+        .fromTo('._main .sec08 .top dl dd',{
+            y : 50,
+            opacity : 0
+        },{
+            y : 0,
+            opacity : 1
+        })
+        .fromTo('._main .sec08 .top a',{
+            x : 50,
+            opacity : 0
+        },{
+            x : 0,
+            opacity : 1
+        })
+    
+        gsap.fromTo('._main .sec08 .box',{
+            y : 50,
+            opacity : 0,
+        },{
+            y : 0,
+            opacity : 1,
+            scrollTrigger : {
+                trigger : "._main .sec08 .box",
+                start : "top bottom-=10%",
+            }
+        });
+
     })
 
-    gsap.from('._main .sec08 .box',{
-        y : 50,
-        opacity : 0,
-        scrollTrigger : {
-            trigger : "._main .sec08 .box",
-            start : "top bottom-=10%"
-        }
-    });
+    mm.add("(max-width:820px)",()=>{
+
+        gsap.timeline({
+            scrollTrigger : {
+                trigger : "._main .sec08 .top",
+                start : "top bottom-=10%",
+            }
+        })
+        .fromTo('._main .sec08 .top dl dt',{
+            y : 50,
+            opacity : 0
+        },{
+            y : 0,
+            opacity : 1
+        })
+        .fromTo('._main .sec08 .top dl dd',{
+            y : 50,
+            opacity : 0
+        },{
+            y : 0,
+            opacity : 1
+        })
+        .fromTo('._main .sec08 .top a',{
+            x : 50,
+            opacity : 0
+        },{
+            x : 0,
+            opacity : 1
+        })
+    
+        gsap.fromTo('._main .sec08 .box',{
+            y : 50,
+            opacity : 0,
+        },{
+            y : 0,
+            opacity : 1,
+            scrollTrigger : {
+                trigger : "._main .sec08 .box",
+                start : "top bottom-=10%",
+                // markers : true,
+            }
+        });
+
+    })
 
 }

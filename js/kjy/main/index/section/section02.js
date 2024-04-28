@@ -1,3 +1,5 @@
+import { NumberCount } from "../../../constant/data.js";
+
 gsap.registerPlugin(SplitText);
 
 export default ()=> {    
@@ -147,8 +149,10 @@ export default ()=> {
     // 숫자 카운트
     $('._main .sec02 .two .area dl dd .count').each((i,e)=>{
         if(i === 0){
-            gsap.from(e,{
+            gsap.fromTo(e,{
                 innerText : 0,
+            },{
+                innerText : NumberCount[i],
                 duration: 2,
                 snap : {
                     innerText : 0.01
@@ -156,12 +160,15 @@ export default ()=> {
                 scrollTrigger : {
                     trigger : e,
                     start : "top bottom-=20%",
+                    invalidateOnRefresh : true,
                     // markers : true,
                 }
             })
         }else{
-            gsap.from(e,{
+            gsap.fromTo(e,{
                 innerText : 0,
+            },{
+                innerText : NumberCount[i],
                 duration: 1,
                 snap : {
                     innerText : 1
@@ -169,6 +176,7 @@ export default ()=> {
                 scrollTrigger : {
                     trigger : e,
                     start : "top bottom-=20%",
+                    invalidateOnRefresh : true,
                     // markers : true,
                 }
             })

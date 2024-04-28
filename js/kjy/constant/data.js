@@ -1,0 +1,1 @@
+export const NumberCount = [1366.29,1,4,2000,27];

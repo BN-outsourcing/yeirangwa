@@ -28,11 +28,13 @@ export default ()=> {
         }
     })
     .from(split.chars,{
+        x : "-50%",
         y : 100,
         opacity : 0,
         stagger: 0.05
     },'a')
     .from(split2.chars,{
+        x : "-50%",
         y : 100,
         opacity : 0,
         stagger: 0.05
