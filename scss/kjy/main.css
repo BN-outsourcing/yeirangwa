@@ -938,8 +938,9 @@
   line-height: 1.4;
   position: absolute;
   left: 50%;
-  bottom: 0;
-  transform: translate(-50%, 75%);
+  top: 100%;
+  transform: translate(-50%, 0%);
+  margin-top: 20px;
   white-space: nowrap;
 }
 ._main .presbyopia_section01 .imbox p em {
@@ -973,7 +974,8 @@
   }
   ._main .presbyopia_section01 .imbox p {
     font-size: 24px;
-    transform: translate(-50%, 75%);
+    transform: translate(-50%, 0%);
+    margin-top: 15px;
   }
 }
 @media screen and (max-width: 480px) {
@@ -2008,6 +2010,9 @@
   padding-right: 2.5%;
   box-sizing: border-box;
 }
+._main .sec05 .sticky .img {
+  display: none;
+}
 ._main .sec05 .sticky dl dt {
   font-size: 80px;
   letter-spacing: -0.02em;
@@ -2107,13 +2112,17 @@
   ._main .sec05 h3 {
     display: none;
   }
+  ._main .sec05 > .img {
+    display: none;
+  }
   ._main .sec05 .img {
-    width: 30%;
-    top: 100px;
+    width: 50%;
+    position: static;
     transform: none;
+    transform: translateX(-5%);
   }
   ._main .sec05 .sticky {
-    width: 70%;
+    width: 100%;
     position: static;
     padding: 0 2.5%;
     margin-left: auto;
@@ -2128,11 +2137,15 @@
   ._main .sec05 .sticky dl dd br {
     display: none;
   }
+  ._main .sec05 .sticky .img {
+    margin-top: 45px;
+    display: block;
+  }
   ._main .sec05 .sticky ul {
-    margin-top: 95px;
+    margin-top: 55px;
   }
   ._main .sec05 .sticky ul li + li {
-    margin-top: 105px;
+    margin-top: 75px;
   }
   ._main .sec05 .sticky ul li .q span, ._main .sec05 .sticky ul li .a span {
     font-size: 20px;

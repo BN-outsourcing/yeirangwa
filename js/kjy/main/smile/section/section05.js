@@ -59,15 +59,54 @@ export default ()=>{
     });
 
     mm.add("(max-width: 821px)", ()=>{
-        ScrollTrigger.create({
-            trigger : "._main .sec05 .img",
-            endTrigger : "._main .sec05",
-            start : "top top+=10%",
-            end : "bottom center",
-            pinType : "fixed",
-            pin : true,
-            pinSpacing : false
+
+        $('._main .sec05 .sticky ul li').each((i,e)=>{
+            gsap.from(e,{
+                y : 100,
+                opacity : 0,
+                scrollTrigger : {
+                    trigger : e,
+                    start : "top bottom-=10%"
+                }
+            })
+        });
+
+        gsap.from('._main .sec05 .sticky dl dt',{
+            y : 100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : '._main .sec05 .sticky dl dt',
+                start : "top bottom-=10%"
+            }
+        });
+        
+        gsap.from('._main .sec05 .sticky dl dd',{
+            y : 100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : '._main .sec05 .sticky dl dd',
+                start : "top bottom-=10%"
+            }
+        });
+
+        gsap.from('._main .sec05 .sticky .img',{
+            xPercent : -100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : '._main .sec05 .sticky .img',
+                start : "top bottom-=10%"
+            }
         })
+
+        gsap.from('._main .sec05 .sticky > a',{
+            y : 100,
+            opacity : 0,
+            scrollTrigger : {
+                trigger : '._main .sec05 .sticky > a',
+                start : "top bottom-=10%"
+            }
+        })
+
     });
 
 

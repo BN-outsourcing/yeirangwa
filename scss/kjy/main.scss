@@ -1139,8 +1139,9 @@
                 line-height: (70/50);
                 position: absolute;
                 left: 50%;
-                bottom: 0;
-                transform: translate(-50%,75%);
+                top: 100%;
+                transform: translate(-50%,0%);
+                margin-top: 20px;
                 white-space: nowrap;
                 em {
                     font-weight: bold;
@@ -1180,7 +1181,8 @@
 
                 p {
                     font-size: 24px;
-                    transform: translate(-50%,75%);
+                    transform: translate(-50%,0%);
+                    margin-top: 15px;
                 }
 
             }
@@ -2521,6 +2523,11 @@
             z-index: 5;
             padding-right: 2.5%;
             box-sizing: border-box;
+
+            .img {
+                display: none;
+            }
+
             dl {
                 dt {
                     font-size: 80px;
@@ -2650,14 +2657,19 @@
                 display: none;
             }
 
+            > .img {
+                display: none;
+            }
+
             .img {
-                width: 30%;
-                top: 100px;
+                width: 50%;
+                position: static;
                 transform: none;
+                transform: translateX(-5%);
             }
             
             .sticky {
-                width: 70%;
+                width: 100%;
                 position: static;
                 padding: 0 2.5%;
                 margin-left: auto;
@@ -2673,11 +2685,16 @@
                     }
                 }
 
+                .img {
+                    margin-top: 45px;
+                    display: block;
+                }
+
                 ul {
-                    margin-top: 95px;
+                    margin-top: 55px;
                     li {
                         + li {
-                            margin-top: 105px;
+                            margin-top: 75px;
                         }
 
                         .q,.a {
